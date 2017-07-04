@@ -46,13 +46,15 @@
     
 }
 
+#pragma mrak - 动态添加方法
 void runAddMethod(id self, SEL _cmd, NSString *string){
-    NSLog(@"add C IMP %@", string);
+    NSLog(@"   IMP %@", string);
 }
+///方法拦截
 + (BOOL)resolveInstanceMethod:(SEL)sel{
     //给本类动态添加一个方法
-    if ([NSStringFromSelector(sel) isEqualToString:@"textClick:"]) {
-        class_addMethod(self, sel, (IMP)runAddMethod, "v@:*");
+    if ([NSStringFromSelector(sel) isEqualToString:@"textsel:"]) {
+        class_addMethod(self, sel, (IMP)runAddMethod, "v@:*");//表示添加含有一个参数的方法
     }
     return YES;
 }

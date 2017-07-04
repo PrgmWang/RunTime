@@ -10,4 +10,6 @@
 
 @interface UIButton (click)
 
+-(void)handleAction:(void(^)(void))block;
+
 @end

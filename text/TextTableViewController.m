@@ -7,8 +7,9 @@
 //
 
 #import "TextTableViewController.h"
-
-@interface TextTableViewController ()
+#import "TextTableViewCell.h"
+#import "UITextField+SecTag.h"
+@interface TextTableViewController ()<UITextFieldDelegate>
 
 @end
 
@@ -18,81 +19,66 @@
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // self.clearsSelectionOnViewWillAppear = NO; 
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    
+    /**
+     *。 进入当前页面之后建议大家 先看看 图片    text.png  这是我当前项目中的一个表单页面，，，
+     *   可以看得出有很多种不同的cell每个cell中又基本都有个。textFiled  通常情况下我们都会给textFiled 赋值tag  代理中进行tag的判断然后 一一对应不同的变量  最后提交表单
+         问题来了：
+         1.由于不同的cell 不同的分区。表单内容很大时  tag判断赋值过程繁杂，容易错。
+         2.一旦某个section中要插入一个cell。 修改工作比较头疼
+     *
+     *   以上问题我也遇到了（这个图片的页面我前后一共修改过6次左右），所以今天特意选择了一个新的方法去尝试
+     *   我用runtime机制。动态给textField  添加了一个新的。tag  secTag;   
+     *   这样的话。我们只需要  tag=  indexPath.row  secTag =  indexPath.section
+     *   通过两个tag 值 我们就可以准确定位到textFiel 所在的行 并对应变量
+     *
+     */
+    
+    
+    //当然 这些方法都是我一个简单的运用，只为方便大家理解，  如果大家想要详细探究， jsonModel   AFN中都有大量运用，
+}
+
+
+#pragma mark UITableViewDelegate && UITableViewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 3;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 3;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TextTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"TextTableViewCell"];
+    if (!cell) {
+        cell=[[[NSBundle mainBundle] loadNibNamed:@"TextTableViewCell" owner:self options:nil] lastObject];
+    }
+    
+    cell.inputField.tag= indexPath.row;
+    [cell.inputField setSecTag:(id)[NSNumber numberWithInteger:indexPath.section]];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"===%ld",indexPath.section);
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return CGFLOAT_MIN;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 20;
+}
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    NSLog(@"====sectag %@,tag =%ld",[textField getSecTag],textField.tag);
     return YES;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

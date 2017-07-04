@@ -10,4 +10,7 @@
 
 @interface UITextField (SecTag)
 
+- (void) setSecTag:(id) secTag;
+
+- (id  ) getSecTag;
 @end

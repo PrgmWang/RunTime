@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		835C2E041F0491A700D61029 /* UIButton+click.m in Sources */ = {isa = PBXBuildFile; fileRef = 835C2E031F0491A700D61029 /* UIButton+click.m */; };
+		835C2E071F0494B700D61029 /* TextTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835C2E061F0494B700D61029 /* TextTableViewController.m */; };
+		835C2E0B1F04981700D61029 /* TextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 835C2E091F04981700D61029 /* TextTableViewCell.m */; };
+		835C2E0C1F04981700D61029 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 835C2E0A1F04981700D61029 /* TextTableViewCell.xib */; };
+		835C2E0F1F04996900D61029 /* UITextField+SecTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 835C2E0E1F04996900D61029 /* UITextField+SecTag.m */; };
+		835C2E111F04A0F500D61029 /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = 835C2E101F04A0F500D61029 /* text.png */; };
 		83684E341EFB6C7700F4B534 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83684E331EFB6C7700F4B534 /* main.m */; };
 		83684E371EFB6C7700F4B534 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83684E361EFB6C7700F4B534 /* AppDelegate.m */; };
 		83684E3A1EFB6C7700F4B534 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83684E391EFB6C7700F4B534 /* ViewController.m */; };
@@ -16,6 +22,7 @@
 		83684E451EFB6C7700F4B534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83684E431EFB6C7700F4B534 /* LaunchScreen.storyboard */; };
 		83684E501EFB6C7700F4B534 /* textTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83684E4F1EFB6C7700F4B534 /* textTests.m */; };
 		83684E5B1EFB6C7700F4B534 /* textUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83684E5A1EFB6C7700F4B534 /* textUITests.m */; };
+		83DF837E1F048E0100B6DF13 /* textModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF837D1F048E0100B6DF13 /* textModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		835C2E021F0491A700D61029 /* UIButton+click.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+click.h"; sourceTree = "<group>"; };
+		835C2E031F0491A700D61029 /* UIButton+click.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+click.m"; sourceTree = "<group>"; };
+		835C2E051F0494B700D61029 /* TextTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTableViewController.h; sourceTree = "<group>"; };
+		835C2E061F0494B700D61029 /* TextTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTableViewController.m; sourceTree = "<group>"; };
+		835C2E081F04981700D61029 /* TextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTableViewCell.h; sourceTree = "<group>"; };
+		835C2E091F04981700D61029 /* TextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTableViewCell.m; sourceTree = "<group>"; };
+		835C2E0A1F04981700D61029 /* TextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
+		835C2E0D1F04996900D61029 /* UITextField+SecTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+SecTag.h"; sourceTree = "<group>"; };
+		835C2E0E1F04996900D61029 /* UITextField+SecTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+SecTag.m"; sourceTree = "<group>"; };
+		835C2E101F04A0F500D61029 /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
 		83684E2F1EFB6C7700F4B534 /* text.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = text.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83684E331EFB6C7700F4B534 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83684E351EFB6C7700F4B534 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +70,8 @@
 		83684E561EFB6C7700F4B534 /* textUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = textUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83684E5A1EFB6C7700F4B534 /* textUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textUITests.m; sourceTree = "<group>"; };
 		83684E5C1EFB6C7700F4B534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83DF837C1F048E0100B6DF13 /* textModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = textModel.h; sourceTree = "<group>"; };
+		83DF837D1F048E0100B6DF13 /* textModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = textModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +126,19 @@
 				83684E361EFB6C7700F4B534 /* AppDelegate.m */,
 				83684E381EFB6C7700F4B534 /* ViewController.h */,
 				83684E391EFB6C7700F4B534 /* ViewController.m */,
+				83DF837C1F048E0100B6DF13 /* textModel.h */,
+				83DF837D1F048E0100B6DF13 /* textModel.m */,
+				835C2E021F0491A700D61029 /* UIButton+click.h */,
+				835C2E031F0491A700D61029 /* UIButton+click.m */,
+				835C2E051F0494B700D61029 /* TextTableViewController.h */,
+				835C2E061F0494B700D61029 /* TextTableViewController.m */,
+				835C2E081F04981700D61029 /* TextTableViewCell.h */,
+				835C2E091F04981700D61029 /* TextTableViewCell.m */,
+				835C2E0A1F04981700D61029 /* TextTableViewCell.xib */,
+				835C2E0D1F04996900D61029 /* UITextField+SecTag.h */,
+				835C2E0E1F04996900D61029 /* UITextField+SecTag.m */,
 				83684E3B1EFB6C7700F4B534 /* Main.storyboard */,
+				835C2E101F04A0F500D61029 /* text.png */,
 				83684E411EFB6C7700F4B534 /* Assets.xcassets */,
 				83684E431EFB6C7700F4B534 /* LaunchScreen.storyboard */,
 				83684E461EFB6C7700F4B534 /* Info.plist */,
@@ -251,6 +282,8 @@
 			files = (
 				83684E451EFB6C7700F4B534 /* LaunchScreen.storyboard in Resources */,
 				83684E421EFB6C7700F4B534 /* Assets.xcassets in Resources */,
+				835C2E111F04A0F500D61029 /* text.png in Resources */,
+				835C2E0C1F04981700D61029 /* TextTableViewCell.xib in Resources */,
 				83684E3D1EFB6C7700F4B534 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,8 +310,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				83684E3A1EFB6C7700F4B534 /* ViewController.m in Sources */,
+				835C2E0F1F04996900D61029 /* UITextField+SecTag.m in Sources */,
+				83DF837E1F048E0100B6DF13 /* textModel.m in Sources */,
+				835C2E041F0491A700D61029 /* UIButton+click.m in Sources */,
 				83684E371EFB6C7700F4B534 /* AppDelegate.m in Sources */,
 				83684E401EFB6C7700F4B534 /* text.xcdatamodeld in Sources */,
+				835C2E071F0494B700D61029 /* TextTableViewController.m in Sources */,
+				835C2E0B1F04981700D61029 /* TextTableViewCell.m in Sources */,
 				83684E341EFB6C7700F4B534 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +466,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/text",
+				);
 				INFOPLIST_FILE = text/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SinoTech.text;
@@ -439,6 +481,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/text",
+				);
 				INFOPLIST_FILE = text/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SinoTech.text;
@@ -511,6 +557,7 @@
 				83684E611EFB6C7700F4B534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83684E621EFB6C7700F4B534 /* Build configuration list for PBXNativeTarget "textTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +566,7 @@
 				83684E641EFB6C7700F4B534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83684E651EFB6C7700F4B534 /* Build configuration list for PBXNativeTarget "textUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +575,7 @@
 				83684E671EFB6C7700F4B534 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

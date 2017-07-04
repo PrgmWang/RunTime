@@ -7,7 +7,21 @@
 //
 
 #import "UIButton+click.h"
-
+#import <objc/runtime.h>
 @implementation UIButton (click)
+
+typedef void(^Action) (void);
+static char key;
+
+-(void)handleAction:(void (^)(void))block{
+    objc_setAssociatedObject(self, &key, block, OBJC_ASSOCIATION_COPY);
+    [self addTarget:self action:@selector(click ) forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)click{
+    Action  block= objc_getAssociatedObject(self, &key);
+    if (block) {
+        block();
+    }
+}
 
 @end
